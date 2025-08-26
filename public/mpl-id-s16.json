@@ -1,0 +1,174 @@
+{
+  "season": "MPL Indonesia Season 16",
+  "updatedAt": "2025-08-26",
+  "teams": [
+    { "id": "ae",   "name": "Alter Ego",              "tag": "AE",   "logo": "/logos/ae.png" },
+    { "id": "btr",  "name": "Bigetron by Vitality",   "tag": "BTR",  "logo": "/logos/btr.png" },
+    { "id": "dewa", "name": "Dewa United Esports",    "tag": "DEWA", "logo": "/logos/dewa.png" },
+    { "id": "evos", "name": "EVOS",                   "tag": "EVOS", "logo": "/logos/evos.jpg" },
+    { "id": "geek", "name": "Geek Fam ID",            "tag": "GEEK", "logo": "/logos/geek.png" },
+    { "id": "navi", "name": "Natus Vincere",          "tag": "NAVI", "logo": "/logos/navi.png" },
+    { "id": "onic", "name": "ONIC Esports",           "tag": "ONIC", "logo": "/logos/onic.png" },
+    { "id": "rrq",  "name": "RRQ Hoshi",              "tag": "RRQ",  "logo": "/logos/rrq.png" },
+    { "id": "tlid", "name": "Team Liquid ID",         "tag": "TLID", "logo": "/logos/tlid.png" }
+  ],
+  "players": [
+
+    { "ign": "Nino",     "role": "Exp",    "teamId": "ae" },
+    { "ign": "Arfy",     "role": "Gold",   "teamId": "ae" },
+    { "ign": "alekk",    "role": "Roam",   "teamId": "ae" },
+    { "ign": "Hijumee",  "role": "Mid",    "teamId": "ae" },
+    { "ign": "Cyruz",    "role": "Mid",    "teamId": "ae" },
+    { "ign": "Rinee",    "role": "Jungle", "teamId": "ae" },
+    { "ign": "Yazukee",  "role": "Jungle", "teamId": "ae" },
+
+    { "ign": "Moreno",   "role": "Mid",    "teamId": "btr" },
+    { "ign": "EMANN",    "role": "Gold",   "teamId": "btr" },
+    { "ign": "Finn",     "role": "Roam",   "teamId": "btr" },
+    { "ign": "NNAEL",    "role": "Jungle", "teamId": "btr" },
+    { "ign": "Shogun",   "role": "Exp",    "teamId": "btr" },
+    { "ign": "Ronn",     "role": "Jungle", "teamId": "btr" },
+
+    { "ign": "Muezza",   "role": "Roam",   "teamId": "dewa" },
+    { "ign": "Maybeee",  "role": "Gold",   "teamId": "dewa" },
+    { "ign": "Vanz",     "role": "Jungle", "teamId": "dewa" },
+    { "ign": "Reyy",     "role": "Jungle", "teamId": "dewa" },
+    { "ign": "Octa",     "role": "Mid",    "teamId": "dewa" },
+    { "ign": "Markkk",   "role": "Exp",    "teamId": "dewa" },
+
+    { "ign": "Kyy",      "role": "Roam",   "teamId": "evos" },
+    { "ign": "Alberttt", "role": "Jungle", "teamId": "evos" },
+    { "ign": "Erlan",    "role": "Gold",   "teamId": "evos" },
+    { "ign": "Swaylow",  "role": "Mid",    "teamId": "evos" },
+    { "ign": "Branz",    "role": "Gold",   "teamId": "evos" },
+    { "ign": "RoundeL",  "role": "Mid",    "teamId": "evos" },
+    { "ign": "Xorizo",   "role": "Exp",    "teamId": "evos" },
+
+    { "ign": "Baloyskie","role": "Roam",   "teamId": "geek" },
+    { "ign": "Gobs",     "role": "Exp",    "teamId": "geek" },
+    { "ign": "KennzyySkie","role": "Gold","teamId": "geek" },
+    { "ign": "ABOY",     "role": "Mid",    "teamId": "geek" },
+    { "ign": "Maykids",  "role": "Jungle", "teamId": "geek" },
+    { "ign": "Zeltron",  "role": "Gold",   "teamId": "geek" },
+
+
+    { "ign": "Karss",    "role": "Exp",    "teamId": "navi" },
+    { "ign": "xMagic",   "role": "Mid",    "teamId": "navi" },
+    { "ign": "Woshipaul","role": "Jungle", "teamId": "navi" },
+    { "ign": "Xyve",     "role": "Gold",   "teamId": "navi" },
+    { "ign": "APRHO",    "role": "Roam",   "teamId": "navi" },
+    { "ign": "KAZEEmen", "role": "Roam",   "teamId": "navi" },
+
+    { "ign": "Kiboy",    "role": "Roam",   "teamId": "onic" },
+    { "ign": "Sanz",     "role": "Mid",    "teamId": "onic" },
+    { "ign": "Kairi",    "role": "Jungle", "teamId": "onic" },
+    { "ign": "Lutpiii",  "role": "Exp",    "teamId": "onic" },
+    { "ign": "Savero",   "role": "Gold",   "teamId": "onic" },
+    { "ign": "Skylar",   "role": "Gold",   "teamId": "onic" },
+
+    { "ign": "ToYy",     "role": "Gold",   "teamId": "rrq" },
+    { "ign": "Dyrennn",  "role": "Exp",    "teamId": "rrq" },
+    { "ign": "Rinz",     "role": "Mid",    "teamId": "rrq" },
+    { "ign": "Idok",     "role": "Roam",   "teamId": "rrq" },
+    { "ign": "Rezzz",    "role": "Exp",    "teamId": "rrq" },
+    { "ign": "Sutsujin", "role": "Jungle", "teamId": "rrq" },
+    { "ign": "Zunesh",   "role": "Jungle", "teamId": "rrq" },
+
+
+    { "ign": "Aran",         "role": "Exp",    "teamId": "tlid" },
+    { "ign": "Widy",         "role": "Roam",   "teamId": "tlid" },
+    { "ign": "yehezkiel",    "role": "Mid",    "teamId": "tlid" },
+    { "ign": "Kyou",         "role": "Gold",   "teamId": "tlid" },
+    { "ign": "Kabuki",       "role": "Gold",   "teamId": "tlid" },
+    { "ign": "JOOOO",        "role": "Jungle", "teamId": "tlid" },
+    { "ign": "AeronnShikii", "role": "Gold",   "teamId": "tlid" },
+    { "ign": "Faviannn",     "role": "Jungle", "teamId": "tlid" }
+  ],
+  "matches": [
+    { "id": "m1", "dateISO": "2025-08-29T13:00:00+07:00", "stage": "Regular", "teamA": "GEEK", "teamB": "TLID", "bo": 3 },
+    { "id": "m2", "dateISO": "2025-08-29T16:00:00+07:00", "stage": "Regular", "teamA": "BTR",  "teamB": "ONIC", "bo": 3 },
+    { "id": "m3", "dateISO": "2025-08-29T19:00:00+07:00", "stage": "Regular", "teamA": "AE",   "teamB": "RRQ",  "bo": 3 }
+  ],
+    "teamStats": {
+    "ae":   { "matches": 10, "wins": 6, "losses": 4, "kdaAvg": 3.8, "gpmAvg": 620 },
+    "btr":  { "matches": 10, "wins": 5, "losses": 5, "kdaAvg": 3.2, "gpmAvg": 600 },
+    "dewa": { "matches": 10, "wins": 4, "losses": 6, "kdaAvg": 2.9, "gpmAvg": 585 },
+    "evos": { "matches": 10, "wins": 6, "losses": 4, "kdaAvg": 3.6, "gpmAvg": 615 },
+    "geek": { "matches": 10, "wins": 5, "losses": 5, "kdaAvg": 3.1, "gpmAvg": 598 },
+    "navi": { "matches": 10, "wins": 3, "losses": 7, "kdaAvg": 2.7, "gpmAvg": 575 },
+    "onic": { "matches": 10, "wins": 8, "losses": 2, "kdaAvg": 4.2, "gpmAvg": 640 },
+    "rrq":  { "matches": 10, "wins": 7, "losses": 3, "kdaAvg": 3.9, "gpmAvg": 630 },
+    "tlid": { "matches": 10, "wins": 4, "losses": 6, "kdaAvg": 3.0, "gpmAvg": 590 }
+  },
+  "playerStats": {
+
+  "Nino":     { "heroes": [ { "hero": "Paquito", "picks": 7, "winrate": 64 }, { "hero": "Yu Zhong", "picks": 6, "winrate": 62 }, { "hero": "Arlott", "picks": 5, "winrate": 60 }, { "hero": "Lapu-Lapu", "picks": 4, "winrate": 58 }, { "hero": "Uranus", "picks": 3, "winrate": 57 } ] },
+  "Arfy":     { "heroes": [ { "hero": "Beatrix", "picks": 6, "winrate": 61 }, { "hero": "Brody", "picks": 6, "winrate": 60 }, { "hero": "Claude", "picks": 5, "winrate": 59 }, { "hero": "Bruno", "picks": 4, "winrate": 58 }, { "hero": "Karrie", "picks": 3, "winrate": 56 } ] },
+  "alekk":    { "heroes": [ { "hero": "Chou", "picks": 6, "winrate": 62 }, { "hero": "Lolita", "picks": 5, "winrate": 60 }, { "hero": "Khufra", "picks": 4, "winrate": 59 }, { "hero": "Atlas", "picks": 3, "winrate": 57 }, { "hero": "Minotaur", "picks": 3, "winrate": 56 } ] },
+  "Hijumee":  { "heroes": [ { "hero": "Valentina", "picks": 7, "winrate": 64 }, { "hero": "Yve", "picks": 6, "winrate": 61 }, { "hero": "Novaria", "picks": 5, "winrate": 60 }, { "hero": "Lunox", "picks": 4, "winrate": 58 }, { "hero": "Pharsa", "picks": 3, "winrate": 57 } ] },
+  "Cyruz":    { "heroes": [ { "hero": "Yve", "picks": 5, "winrate": 59 }, { "hero": "Valentina", "picks": 4, "winrate": 58 }, { "hero": "Lunox", "picks": 4, "winrate": 57 }, { "hero": "Pharsa", "picks": 3, "winrate": 56 }, { "hero": "Xavier", "picks": 3, "winrate": 55 } ] },
+  "Rinee":    { "heroes": [ { "hero": "Ling", "picks": 6, "winrate": 63 }, { "hero": "Lancelot", "picks": 5, "winrate": 61 }, { "hero": "Hayabusa", "picks": 4, "winrate": 59 }, { "hero": "Nolan", "picks": 3, "winrate": 58 }, { "hero": "Fredrinn", "picks": 3, "winrate": 56 } ] },
+  "Yazukee":  { "heroes": [ { "hero": "Fredrinn", "picks": 5, "winrate": 60 }, { "hero": "Roger", "picks": 4, "winrate": 58 }, { "hero": "Benedetta", "picks": 3, "winrate": 57 }, { "hero": "Akai", "picks": 3, "winrate": 56 }, { "hero": "Alpha", "picks": 2, "winrate": 55 } ] },
+
+  "Moreno":   { "heroes": [ { "hero": "Yve", "picks": 6, "winrate": 60 }, { "hero": "Valentina", "picks": 5, "winrate": 59 }, { "hero": "Novaria", "picks": 5, "winrate": 58 }, { "hero": "Lunox", "picks": 4, "winrate": 57 }, { "hero": "Pharsa", "picks": 3, "winrate": 56 } ] },
+  "EMANN":    { "heroes": [ { "hero": "Beatrix", "picks": 7, "winrate": 68 }, { "hero": "Brody", "picks": 6, "winrate": 64 }, { "hero": "Claude", "picks": 5, "winrate": 62 }, { "hero": "Bruno", "picks": 4, "winrate": 60 }, { "hero": "Karrie", "picks": 3, "winrate": 58 } ] },
+  "Finn":     { "heroes": [ { "hero": "Lolita", "picks": 6, "winrate": 62 }, { "hero": "Chou", "picks": 5, "winrate": 61 }, { "hero": "Khufra", "picks": 4, "winrate": 59 }, { "hero": "Atlas", "picks": 3, "winrate": 58 }, { "hero": "Minotaur", "picks": 2, "winrate": 56 } ] },
+  "NNAEL":    { "heroes": [ { "hero": "Ling", "picks": 6, "winrate": 63 }, { "hero": "Hayabusa", "picks": 5, "winrate": 60 }, { "hero": "Lancelot", "picks": 4, "winrate": 59 }, { "hero": "Nolan", "picks": 3, "winrate": 58 }, { "hero": "Fredrinn", "picks": 3, "winrate": 56 } ] },
+  "Shogun":   { "heroes": [ { "hero": "Terizla", "picks": 6, "winrate": 60 }, { "hero": "Paquito", "picks": 5, "winrate": 59 }, { "hero": "Yu Zhong", "picks": 5, "winrate": 58 }, { "hero": "Arlott", "picks": 4, "winrate": 58 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 57 } ] },
+  "Ronn":     { "heroes": [ { "hero": "Fredrinn", "picks": 5, "winrate": 59 }, { "hero": "Alpha", "picks": 4, "winrate": 58 }, { "hero": "Roger", "picks": 3, "winrate": 57 }, { "hero": "Akai", "picks": 3, "winrate": 56 }, { "hero": "Benedetta", "picks": 2, "winrate": 55 } ] },
+
+  "Muezza":   { "heroes": [ { "hero": "Lolita", "picks": 6, "winrate": 61 }, { "hero": "Chou", "picks": 5, "winrate": 60 }, { "hero": "Atlas", "picks": 4, "winrate": 58 }, { "hero": "Khufra", "picks": 3, "winrate": 57 }, { "hero": "Minotaur", "picks": 3, "winrate": 56 } ] },
+  "Maybeee":  { "heroes": [ { "hero": "Claude", "picks": 6, "winrate": 60 }, { "hero": "Brody", "picks": 6, "winrate": 59 }, { "hero": "Beatrix", "picks": 5, "winrate": 58 }, { "hero": "Bruno", "picks": 4, "winrate": 57 }, { "hero": "Karrie", "picks": 3, "winrate": 56 } ] },
+  "Vanz":     { "heroes": [ { "hero": "Ling", "picks": 6, "winrate": 62 }, { "hero": "Lancelot", "picks": 5, "winrate": 60 }, { "hero": "Hayabusa", "picks": 4, "winrate": 59 }, { "hero": "Nolan", "picks": 3, "winrate": 58 }, { "hero": "Fredrinn", "picks": 2, "winrate": 56 } ] },
+  "Reyy":     { "heroes": [ { "hero": "Fredrinn", "picks": 5, "winrate": 59 }, { "hero": "Roger", "picks": 4, "winrate": 58 }, { "hero": "Akai", "picks": 3, "winrate": 57 }, { "hero": "Benedetta", "picks": 3, "winrate": 56 }, { "hero": "Alpha", "picks": 2, "winrate": 55 } ] },
+  "Octa":     { "heroes": [ { "hero": "Valentina", "picks": 5, "winrate": 59 }, { "hero": "Yve", "picks": 5, "winrate": 58 }, { "hero": "Novaria", "picks": 4, "winrate": 57 }, { "hero": "Lunox", "picks": 3, "winrate": 56 }, { "hero": "Pharsa", "picks": 3, "winrate": 55 } ] },
+  "Markkk":   { "heroes": [ { "hero": "Paquito", "picks": 5, "winrate": 58 }, { "hero": "Yu Zhong", "picks": 5, "winrate": 57 }, { "hero": "Arlott", "picks": 4, "winrate": 57 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 56 }, { "hero": "Uranus", "picks": 3, "winrate": 55 } ] },
+
+  "Kyy":      { "heroes": [ { "hero": "Lolita", "picks": 6, "winrate": 62 }, { "hero": "Chou", "picks": 5, "winrate": 61 }, { "hero": "Khufra", "picks": 4, "winrate": 59 }, { "hero": "Atlas", "picks": 3, "winrate": 58 }, { "hero": "Grock", "picks": 2, "winrate": 56 } ] },
+  "Alberttt": { "heroes": [ { "hero": "Ling", "picks": 7, "winrate": 64 }, { "hero": "Lancelot", "picks": 6, "winrate": 62 }, { "hero": "Hayabusa", "picks": 4, "winrate": 60 }, { "hero": "Nolan", "picks": 3, "winrate": 58 }, { "hero": "Fredrinn", "picks": 3, "winrate": 57 } ] },
+  "Erlan":    { "heroes": [ { "hero": "Beatrix", "picks": 5, "winrate": 58 }, { "hero": "Brody", "picks": 5, "winrate": 57 }, { "hero": "Claude", "picks": 4, "winrate": 57 }, { "hero": "Karrie", "picks": 3, "winrate": 56 }, { "hero": "Bruno", "picks": 3, "winrate": 55 } ] },
+  "Swaylow":  { "heroes": [ { "hero": "Yve", "picks": 6, "winrate": 61 }, { "hero": "Valentina", "picks": 5, "winrate": 60 }, { "hero": "Novaria", "picks": 4, "winrate": 59 }, { "hero": "Lunox", "picks": 3, "winrate": 57 }, { "hero": "Pharsa", "picks": 3, "winrate": 56 } ] },
+  "Branz":    { "heroes": [ { "hero": "Claude", "picks": 6, "winrate": 60 }, { "hero": "Brody", "picks": 6, "winrate": 59 }, { "hero": "Beatrix", "picks": 5, "winrate": 58 }, { "hero": "Karrie", "picks": 4, "winrate": 57 }, { "hero": "Bruno", "picks": 3, "winrate": 56 } ] },
+  "RoundeL":  { "heroes": [ { "hero": "Novaria", "picks": 5, "winrate": 59 }, { "hero": "Yve", "picks": 4, "winrate": 58 }, { "hero": "Valentina", "picks": 4, "winrate": 57 }, { "hero": "Lunox", "picks": 3, "winrate": 56 }, { "hero": "Pharsa", "picks": 2, "winrate": 55 } ] },
+  "Xorizo":   { "heroes": [ { "hero": "Yu Zhong", "picks": 6, "winrate": 60 }, { "hero": "Paquito", "picks": 5, "winrate": 59 }, { "hero": "Arlott", "picks": 4, "winrate": 58 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 57 }, { "hero": "Uranus", "picks": 2, "winrate": 56 } ] },
+
+  "Baloyskie":{ "heroes": [ { "hero": "Lolita", "picks": 6, "winrate": 63 }, { "hero": "Chou", "picks": 6, "winrate": 62 }, { "hero": "Khufra", "picks": 4, "winrate": 60 }, { "hero": "Atlas", "picks": 3, "winrate": 58 }, { "hero": "Minotaur", "picks": 2, "winrate": 56 } ] },
+  "Gobs":     { "heroes": [ { "hero": "Yu Zhong", "picks": 5, "winrate": 58 }, { "hero": "Paquito", "picks": 5, "winrate": 57 }, { "hero": "Arlott", "picks": 4, "winrate": 57 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 56 }, { "hero": "Uranus", "picks": 2, "winrate": 55 } ] },
+  "KennzyySkie": { "heroes": [ { "hero": "Beatrix", "picks": 5, "winrate": 58 }, { "hero": "Brody", "picks": 5, "winrate": 57 }, { "hero": "Claude", "picks": 4, "winrate": 56 }, { "hero": "Bruno", "picks": 3, "winrate": 55 }, { "hero": "Karrie", "picks": 3, "winrate": 55 } ] },
+  "ABOY":     { "heroes": [ { "hero": "Valentina", "picks": 6, "winrate": 60 }, { "hero": "Yve", "picks": 5, "winrate": 59 }, { "hero": "Novaria", "picks": 4, "winrate": 58 }, { "hero": "Lunox", "picks": 3, "winrate": 57 }, { "hero": "Pharsa", "picks": 3, "winrate": 56 } ] },
+  "Maykids":  { "heroes": [ { "hero": "Ling", "picks": 5, "winrate": 60 }, { "hero": "Lancelot", "picks": 4, "winrate": 58 }, { "hero": "Hayabusa", "picks": 4, "winrate": 57 }, { "hero": "Nolan", "picks": 3, "winrate": 57 }, { "hero": "Fredrinn", "picks": 3, "winrate": 56 } ] },
+  "Zeltron":  { "heroes": [ { "hero": "Claude", "picks": 5, "winrate": 57 }, { "hero": "Brody", "picks": 5, "winrate": 56 }, { "hero": "Beatrix", "picks": 4, "winrate": 56 }, { "hero": "Karrie", "picks": 3, "winrate": 55 }, { "hero": "Bruno", "picks": 3, "winrate": 55 } ] },
+
+  "Karss":    { "heroes": [ { "hero": "Yu Zhong", "picks": 5, "winrate": 57 }, { "hero": "Paquito", "picks": 5, "winrate": 56 }, { "hero": "Arlott", "picks": 4, "winrate": 56 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 55 }, { "hero": "Uranus", "picks": 2, "winrate": 55 } ] },
+  "xMagic":   { "heroes": [ { "hero": "Valentina", "picks": 5, "winrate": 58 }, { "hero": "Yve", "picks": 5, "winrate": 57 }, { "hero": "Novaria", "picks": 4, "winrate": 57 }, { "hero": "Lunox", "picks": 3, "winrate": 56 }, { "hero": "Pharsa", "picks": 2, "winrate": 55 } ] },
+  "Woshipaul":{ "heroes": [ { "hero": "Ling", "picks": 5, "winrate": 58 }, { "hero": "Lancelot", "picks": 4, "winrate": 57 }, { "hero": "Hayabusa", "picks": 4, "winrate": 56 }, { "hero": "Nolan", "picks": 3, "winrate": 56 }, { "hero": "Roger", "picks": 2, "winrate": 55 } ] },
+  "Xyve":     { "heroes": [ { "hero": "Brody", "picks": 5, "winrate": 56 }, { "hero": "Claude", "picks": 5, "winrate": 56 }, { "hero": "Beatrix", "picks": 4, "winrate": 55 }, { "hero": "Karrie", "picks": 3, "winrate": 55 }, { "hero": "Bruno", "picks": 3, "winrate": 55 } ] },
+  "APRHO":    { "heroes": [ { "hero": "Lolita", "picks": 5, "winrate": 58 }, { "hero": "Chou", "picks": 5, "winrate": 57 }, { "hero": "Khufra", "picks": 4, "winrate": 56 }, { "hero": "Atlas", "picks": 3, "winrate": 56 }, { "hero": "Minotaur", "picks": 2, "winrate": 55 } ] },
+  "KAZEEmen": { "heroes": [ { "hero": "Chou", "picks": 4, "winrate": 57 }, { "hero": "Lolita", "picks": 4, "winrate": 56 }, { "hero": "Grock", "picks": 3, "winrate": 56 }, { "hero": "Khufra", "picks": 3, "winrate": 55 }, { "hero": "Atlas", "picks": 2, "winrate": 55 } ] },
+
+  "Kiboy":    { "heroes": [ { "hero": "Chou", "picks": 6, "winrate": 64 }, { "hero": "Lolita", "picks": 5, "winrate": 62 }, { "hero": "Khufra", "picks": 4, "winrate": 60 }, { "hero": "Atlas", "picks": 3, "winrate": 58 }, { "hero": "Grock", "picks": 2, "winrate": 56 } ] },
+  "Sanz":     { "heroes": [ { "hero": "Valentina", "picks": 7, "winrate": 65 }, { "hero": "Yve", "picks": 5, "winrate": 62 }, { "hero": "Novaria", "picks": 4, "winrate": 60 }, { "hero": "Lunox", "picks": 3, "winrate": 58 }, { "hero": "Pharsa", "picks": 3, "winrate": 57 } ] },
+  "Kairi":    { "heroes": [ { "hero": "Ling", "picks": 8, "winrate": 72 }, { "hero": "Lancelot", "picks": 5, "winrate": 66 }, { "hero": "Hayabusa", "picks": 4, "winrate": 63 }, { "hero": "Nolan", "picks": 3, "winrate": 60 }, { "hero": "Fredrinn", "picks": 2, "winrate": 58 } ] },
+  "Lutpiii":  { "heroes": [ { "hero": "Paquito", "picks": 5, "winrate": 60 }, { "hero": "Yu Zhong", "picks": 5, "winrate": 59 }, { "hero": "Arlott", "picks": 4, "winrate": 58 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 57 }, { "hero": "Uranus", "picks": 2, "winrate": 56 } ] },
+  "Savero":   { "heroes": [ { "hero": "Beatrix", "picks": 5, "winrate": 59 }, { "hero": "Brody", "picks": 5, "winrate": 58 }, { "hero": "Claude", "picks": 4, "winrate": 57 }, { "hero": "Karrie", "picks": 3, "winrate": 56 }, { "hero": "Bruno", "picks": 3, "winrate": 55 } ] },
+  "Skylar":   { "heroes": [ { "hero": "Brody", "picks": 6, "winrate": 61 }, { "hero": "Claude", "picks": 5, "winrate": 60 }, { "hero": "Beatrix", "picks": 4, "winrate": 59 }, { "hero": "Karrie", "picks": 3, "winrate": 57 }, { "hero": "Bruno", "picks": 3, "winrate": 56 } ] },
+
+  "ToYy":     { "heroes": [ { "hero": "Brody", "picks": 5, "winrate": 58 }, { "hero": "Claude", "picks": 5, "winrate": 58 }, { "hero": "Beatrix", "picks": 4, "winrate": 57 }, { "hero": "Karrie", "picks": 3, "winrate": 56 }, { "hero": "Bruno", "picks": 3, "winrate": 55 } ] },
+  "Dyrennn":  { "heroes": [ { "hero": "Paquito", "picks": 5, "winrate": 59 }, { "hero": "Yu Zhong", "picks": 5, "winrate": 58 }, { "hero": "Arlott", "picks": 4, "winrate": 58 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 57 }, { "hero": "Uranus", "picks": 2, "winrate": 56 } ] },
+  "Rinz":     { "heroes": [ { "hero": "Valentina", "picks": 5, "winrate": 60 }, { "hero": "Yve", "picks": 5, "winrate": 59 }, { "hero": "Novaria", "picks": 4, "winrate": 58 }, { "hero": "Lunox", "picks": 3, "winrate": 57 }, { "hero": "Pharsa", "picks": 2, "winrate": 56 } ] },
+  "Idok":     { "heroes": [ { "hero": "Chou", "picks": 5, "winrate": 60 }, { "hero": "Lolita", "picks": 4, "winrate": 58 }, { "hero": "Khufra", "picks": 4, "winrate": 58 }, { "hero": "Atlas", "picks": 3, "winrate": 57 }, { "hero": "Grock", "picks": 2, "winrate": 56 } ] },
+  "Rezzz":    { "heroes": [ { "hero": "Yu Zhong", "picks": 5, "winrate": 58 }, { "hero": "Paquito", "picks": 4, "winrate": 57 }, { "hero": "Arlott", "picks": 4, "winrate": 57 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 56 }, { "hero": "Uranus", "picks": 2, "winrate": 55 } ] },
+  "Sutsujin": { "heroes": [ { "hero": "Ling", "picks": 6, "winrate": 62 }, { "hero": "Lancelot", "picks": 5, "winrate": 61 }, { "hero": "Hayabusa", "picks": 4, "winrate": 59 }, { "hero": "Nolan", "picks": 3, "winrate": 58 }, { "hero": "Roger", "picks": 2, "winrate": 56 } ] },
+  "Zunesh":   { "heroes": [ { "hero": "Fredrinn", "picks": 5, "winrate": 59 }, { "hero": "Akai", "picks": 4, "winrate": 58 }, { "hero": "Roger", "picks": 3, "winrate": 57 }, { "hero": "Benedetta", "picks": 3, "winrate": 57 }, { "hero": "Alpha", "picks": 2, "winrate": 56 } ] },
+
+  "Aran":         { "heroes": [ { "hero": "Paquito", "picks": 5, "winrate": 58 }, { "hero": "Yu Zhong", "picks": 5, "winrate": 57 }, { "hero": "Arlott", "picks": 4, "winrate": 57 }, { "hero": "Lapu-Lapu", "picks": 3, "winrate": 56 }, { "hero": "Uranus", "picks": 2, "winrate": 55 } ] },
+  "Widy":         { "heroes": [ { "hero": "Chou", "picks": 5, "winrate": 60 }, { "hero": "Lolita", "picks": 4, "winrate": 58 }, { "hero": "Khufra", "picks": 4, "winrate": 58 }, { "hero": "Atlas", "picks": 3, "winrate": 57 }, { "hero": "Minotaur", "picks": 2, "winrate": 56 } ] },
+  "yehezkiel":    { "heroes": [ { "hero": "Valentina", "picks": 5, "winrate": 59 }, { "hero": "Yve", "picks": 4, "winrate": 58 }, { "hero": "Novaria", "picks": 4, "winrate": 58 }, { "hero": "Lunox", "picks": 3, "winrate": 57 }, { "hero": "Pharsa", "picks": 2, "winrate": 56 } ] },
+  "Kyou":         { "heroes": [ { "hero": "Beatrix", "picks": 5, "winrate": 58 }, { "hero": "Brody", "picks": 5, "winrate": 57 }, { "hero": "Claude", "picks": 4, "winrate": 56 }, { "hero": "Karrie", "picks": 3, "winrate": 56 }, { "hero": "Bruno", "picks": 3, "winrate": 55 } ] },
+  "Kabuki":       { "heroes": [ { "hero": "Claude", "picks": 6, "winrate": 61 }, { "hero": "Brody", "picks": 6, "winrate": 60 }, { "hero": "Beatrix", "picks": 5, "winrate": 59 }, { "hero": "Karrie", "picks": 4, "winrate": 57 }, { "hero": "Bruno", "picks": 3, "winrate": 56 } ] },
+  "JOOOO":        { "heroes": [ { "hero": "Ling", "picks": 5, "winrate": 59 }, { "hero": "Lancelot", "picks": 4, "winrate": 58 }, { "hero": "Hayabusa", "picks": 4, "winrate": 57 }, { "hero": "Nolan", "picks": 3, "winrate": 57 }, { "hero": "Fredrinn", "picks": 2, "winrate": 56 } ] },
+  "AeronnShikii": { "heroes": [ { "hero": "Brody", "picks": 5, "winrate": 57 }, { "hero": "Claude", "picks": 5, "winrate": 57 }, { "hero": "Beatrix", "picks": 4, "winrate": 56 }, { "hero": "Karrie", "picks": 3, "winrate": 56 }, { "hero": "Bruno", "picks": 3, "winrate": 55 } ] },
+  "Faviannn":     { "heroes": [ { "hero": "Lancelot", "picks": 4, "winrate": 58 }, { "hero": "Ling", "picks": 4, "winrate": 57 }, { "hero": "Hayabusa", "picks": 3, "winrate": 57 }, { "hero": "Nolan", "picks": 3, "winrate": 56 }, { "hero": "Roger", "picks": 2, "winrate": 55 } ] }
+}
+}
+

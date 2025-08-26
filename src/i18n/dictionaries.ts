@@ -1,0 +1,38 @@
+export type Lang = "id" | "en";
+
+export const dict: Record<Lang, Record<string, string>> = {
+  id: {
+    players: "Pemain",
+    teams: "Tim",
+    tournaments: "Turnamen",
+    contact: "Kontak",
+    searchPlayers: "Cari pemain...",
+    team: "Tim",
+    role: "Peran",
+    back: "Kembali",
+    roster: "Daftar Pemain",
+    details: "Detail",
+    stage: "Tahap",
+    match: "Pertandingan",
+    bestOf: "BO",
+    light: "Terang",
+    dark: "Gelap",
+  },
+  en: {
+    players: "Players",
+    teams: "Teams",
+    tournaments: "Tournaments",
+    contact: "Contact",
+    searchPlayers: "Search players...",
+    team: "Team",
+    role: "Role",
+    back: "Back",
+    roster: "Roster",
+    details: "Details",
+    stage: "Stage",
+    match: "Match",
+    bestOf: "BO",
+    light: "Light",
+    dark: "Dark",
+  },
+};
