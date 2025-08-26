@@ -8,6 +8,7 @@ export function useMplData() {
 
   useEffect(() => {
     let canceled = false;
+
     fetch("/mpl-id-s16.json")
       .then((r) => r.json() as Promise<MplData>)
       .then((d) => {
@@ -16,6 +17,7 @@ export function useMplData() {
       .finally(() => {
         if (!canceled) setLoading(false);
       });
+
     return () => {
       canceled = true;
     };

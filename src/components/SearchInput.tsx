@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent } from "react";
+import type { ChangeEvent } from "react";
 
 export default function SearchInput({
   value,
@@ -11,6 +11,7 @@ export default function SearchInput({
   placeholder?: string;
 }) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value);
+
   return (
     <input
       value={value}

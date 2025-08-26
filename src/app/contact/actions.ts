@@ -2,7 +2,10 @@
 
 type ContactState = { ok: boolean; error: string };
 
-export async function submitContact(_prevState: ContactState, formData: FormData): Promise<ContactState> {
+export async function submitContact(
+  _prevState: ContactState,
+  formData: FormData
+): Promise<ContactState> {
   const name = (formData.get("name") || "").toString().trim();
   const email = (formData.get("email") || "").toString().trim();
   const message = (formData.get("message") || "").toString().trim();
@@ -23,7 +26,7 @@ export async function submitContact(_prevState: ContactState, formData: FormData
       });
     }
 
-    // 2) SMTP email (opsional)
+    // 2) SMTP (opsional)
     if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
       const nodemailer = await import("nodemailer");
       const transporter = nodemailer.createTransport({
@@ -32,7 +35,6 @@ export async function submitContact(_prevState: ContactState, formData: FormData
         secure: false,
         auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
       });
-
       await transporter.sendMail({
         from: process.env.SMTP_FROM || process.env.SMTP_USER,
         to: process.env.CONTACT_TO || process.env.SMTP_USER,

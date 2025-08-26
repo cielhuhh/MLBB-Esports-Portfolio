@@ -6,7 +6,7 @@ import { Container } from "@/components/Container";
 import { useMplData } from "@/lib/useMplData";
 import { useI18n } from "@/i18n/LangProvider";
 import Image from "next/image";
-import type { PlayerHero, PlayerRecent, MplData } from "@/types/mpl";
+import type { MplData, PlayerHero, PlayerRecent, PlayerStats } from "@/types/mpl";
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, BarChart, Bar, RadarChart, PolarGrid, PolarAngleAxis, Radar,
 } from "recharts";
@@ -17,7 +17,6 @@ function hashStr(s: string) {
   for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
   return h;
 }
-
 function buildFallbackRecent(ign: string): PlayerRecent[] {
   const base = hashStr(ign) % 7;
   return Array.from({ length: 8 }).map((_, i) => ({
@@ -26,7 +25,6 @@ function buildFallbackRecent(ign: string): PlayerRecent[] {
     gpm: 520 + ((base * 37 + i * 23) % 160),
   }));
 }
-
 function buildRoleHeroes(role: string, seedName: string): PlayerHero[] {
   const base = ROLE_HERO_POOLS[role as keyof typeof ROLE_HERO_POOLS] ?? [];
   const seed = hashStr(seedName);
@@ -53,10 +51,10 @@ export default function PlayerDetailPage() {
     return data?.teams.find((t) => t.id === player.teamId) ?? null;
   }, [data, player]);
 
-  const playerStats = useMemo(() => {
+  const playerStats: PlayerStats | undefined = useMemo(() => {
     if (!data || !player) return undefined;
-    // data bertipe MplData → sudah punya playerStats?: Record<string, PlayerStats>
-    return (data as MplData).playerStats?.[player.ign];
+    const typed = data as MplData;
+    return typed.playerStats?.[player.ign];
   }, [data, player]);
 
   const recent: PlayerRecent[] = playerStats?.recent ?? (player ? buildFallbackRecent(player.ign) : []);
@@ -72,7 +70,10 @@ export default function PlayerDetailPage() {
     <main>
       <Navbar />
       <Container className="py-10">
-        <button onClick={() => router.back()} className="mb-6 rounded-md border border-white/15 px-3 py-1.5 text-sm hover:bg-white/5">
+        <button
+          onClick={() => router.back()}
+          className="mb-6 rounded-md border border-white/15 px-3 py-1.5 text-sm hover:bg-white/5"
+        >
           ← {t("back")}
         </button>
 
@@ -82,7 +83,15 @@ export default function PlayerDetailPage() {
         {player && (
           <section className="card p-6 hover-glow">
             <div className="flex items-center gap-4">
-              {team?.logo && <Image src={team.logo} alt={team.name} width={56} height={56} className="rounded-md border border-white/10 bg-white/5" />}
+              {team?.logo && (
+                <Image
+                  src={team.logo}
+                  alt={team.name}
+                  width={56}
+                  height={56}
+                  className="rounded-md border border-white/10 bg-white/5"
+                />
+              )}
               <div>
                 <h1 className="text-2xl font-semibold">{player.ign}</h1>
                 <p className="text-white/70">
@@ -135,7 +144,10 @@ export default function PlayerDetailPage() {
               </div>
             </div>
 
-            <a href={`/teams/${player.teamId}`} className="mt-6 inline-block rounded-md border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">
+            <a
+              href={`/teams/${player.teamId}`}
+              className="mt-6 inline-block rounded-md border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10"
+            >
               {t("details")} {t("teams")} → {team?.name ?? player.teamId.toUpperCase()}
             </a>
           </section>
