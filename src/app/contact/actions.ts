@@ -1,6 +1,8 @@
 "use server";
 
-export async function submitContact(prevState: any, formData: FormData) {
+type ContactState = { ok: boolean; error: string };
+
+export async function submitContact(_prevState: ContactState, formData: FormData): Promise<ContactState> {
   const name = (formData.get("name") || "").toString().trim();
   const email = (formData.get("email") || "").toString().trim();
   const message = (formData.get("message") || "").toString().trim();
@@ -10,7 +12,7 @@ export async function submitContact(prevState: any, formData: FormData) {
   }
 
   try {
-    // 1) Discord webhook
+    // 1) Discord webhook (opsional)
     if (process.env.DISCORD_WEBHOOK_URL) {
       await fetch(process.env.DISCORD_WEBHOOK_URL, {
         method: "POST",
@@ -23,7 +25,6 @@ export async function submitContact(prevState: any, formData: FormData) {
 
     // 2) SMTP email (opsional)
     if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
-      // dynamic import → tidak butuh typings khusus
       const nodemailer = await import("nodemailer");
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -41,8 +42,7 @@ export async function submitContact(prevState: any, formData: FormData) {
     }
 
     return { ok: true, error: "" };
-  } catch (e) {
-    console.error(e);
+  } catch {
     return { ok: false, error: "Failed to submit" };
   }
 }

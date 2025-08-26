@@ -6,26 +6,11 @@ import { Container } from "@/components/Container";
 import { useMplData } from "@/lib/useMplData";
 import { useI18n } from "@/i18n/LangProvider";
 import Image from "next/image";
-
-// ✅ Recharts imports (tanpa set warna khusus)
+import type { PlayerHero, PlayerRecent, MplData } from "@/types/mpl";
 import {
-  ResponsiveContainer,
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  BarChart,
-  Bar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  Radar,
+  ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, BarChart, Bar, RadarChart, PolarGrid, PolarAngleAxis, Radar,
 } from "recharts";
-
-// --- helper: fallback stats jika JSON belum punya playerStats ---
-type RecentItem = { match: string; kda: number; gpm: number };
-type HeroItem = { hero: string; picks: number; winrate: number }; // 0..100
+import { ROLE_HERO_POOLS } from "@/data/roleHeroPools";
 
 function hashStr(s: string) {
   let h = 0;
@@ -33,22 +18,22 @@ function hashStr(s: string) {
   return h;
 }
 
-function buildFallbackRecent(ign: string): RecentItem[] {
-  const base = hashStr(ign) % 7; // 0..6
+function buildFallbackRecent(ign: string): PlayerRecent[] {
+  const base = hashStr(ign) % 7;
   return Array.from({ length: 8 }).map((_, i) => ({
     match: `M${i + 1}`,
     kda: Number(((base + 2 + (i % 3)) / 2 + (i % 2 ? 0.6 : 0.2)).toFixed(2)),
-    gpm: 520 + ((base * 37 + i * 23) % 160), // 520..679
+    gpm: 520 + ((base * 37 + i * 23) % 160),
   }));
 }
 
-function buildFallbackHeroes(ign: string): HeroItem[] {
-  const pool = ["Ling", "Lancelot", "Hayabusa", "Claude", "Valentina", "Lunox", "Yve", "Chou", "Paquito", "Fredrinn"];
-  const seed = hashStr(ign);
-  return pool.slice(0, 5).map((hero, i) => ({
+function buildRoleHeroes(role: string, seedName: string): PlayerHero[] {
+  const base = ROLE_HERO_POOLS[role as keyof typeof ROLE_HERO_POOLS] ?? [];
+  const seed = hashStr(seedName);
+  return base.slice(0, 5).map((hero, i) => ({
     hero,
     picks: 2 + ((seed >> (i * 3)) % 5),
-    winrate: 45 + ((seed >> (i * 5)) % 30), // 45..74
+    winrate: 50 + ((seed >> (i * 5)) % 25),
   }));
 }
 
@@ -68,20 +53,26 @@ export default function PlayerDetailPage() {
     return data?.teams.find((t) => t.id === player.teamId) ?? null;
   }, [data, player]);
 
-  // --- ambil statistik dari JSON jika ada, fallback kalau belum ---
-  // skema opsional di JSON: playerStats: { [ign]: { recent: RecentItem[], heroes: HeroItem[] } }
-  const playerStats = (data as any)?.playerStats?.[player?.ign ?? ""];
-  const recent: RecentItem[] = playerStats?.recent ?? (player ? buildFallbackRecent(player.ign) : []);
-  const heroes: HeroItem[] = playerStats?.heroes ?? (player ? buildFallbackHeroes(player.ign) : []);
+  const playerStats = useMemo(() => {
+    if (!data || !player) return undefined;
+    // data bertipe MplData → sudah punya playerStats?: Record<string, PlayerStats>
+    return (data as MplData).playerStats?.[player.ign];
+  }, [data, player]);
+
+  const recent: PlayerRecent[] = playerStats?.recent ?? (player ? buildFallbackRecent(player.ign) : []);
+  const heroes: PlayerHero[] =
+    playerStats?.heroes?.map((h) => ({
+      hero: h.hero,
+      picks: Number(h.picks ?? 3),
+      winrate: Number(h.winrate ?? 60),
+    })) ??
+    (player ? buildRoleHeroes(player.role, player.ign) : []);
 
   return (
     <main>
       <Navbar />
       <Container className="py-10">
-        <button
-          onClick={() => router.back()}
-          className="mb-6 rounded-md border border-white/15 px-3 py-1.5 text-sm hover:bg-white/5"
-        >
+        <button onClick={() => router.back()} className="mb-6 rounded-md border border-white/15 px-3 py-1.5 text-sm hover:bg-white/5">
           ← {t("back")}
         </button>
 
@@ -89,81 +80,65 @@ export default function PlayerDetailPage() {
         {!loading && !player && <p className="text-red-300">Player tidak ditemukan.</p>}
 
         {player && (
-          <>
-            <section className="rounded-card shadow-glow bg-white/5 border border-white/10 backdrop-blur p-6">
-              <div className="flex items-center gap-4">
-                {team?.logo && (
-                  <Image
-                    src={team.logo}
-                    alt={team.name}
-                    width={56}
-                    height={56}
-                    className="rounded-md border border-white/10 bg-white/5"
-                  />
-                )}
-                <div>
-                  <h1 className="text-2xl font-semibold">{player.ign}</h1>
-                  <p className="text-white/70">
-                    {t("role")}: {player.role} · {t("team")}: {team?.tag ?? player.teamId.toUpperCase()}
-                  </p>
+          <section className="card p-6 hover-glow">
+            <div className="flex items-center gap-4">
+              {team?.logo && <Image src={team.logo} alt={team.name} width={56} height={56} className="rounded-md border border-white/10 bg-white/5" />}
+              <div>
+                <h1 className="text-2xl font-semibold">{player.ign}</h1>
+                <p className="text-white/70">
+                  {t("role")}: {player.role} · {t("team")}: {team?.tag ?? player.teamId.toUpperCase()}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <div className="card p-4">
+                <h3 className="mb-3 font-semibold">Recent KDA</h3>
+                <div className="h-56">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={recent}>
+                      <XAxis dataKey="match" />
+                      <YAxis />
+                      <Tooltip />
+                      <Line type="monotone" dataKey="kda" />
+                    </LineChart>
+                  </ResponsiveContainer>
                 </div>
               </div>
 
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
-                {/* LineChart: KDA trend */}
-                <div className="rounded-card shadow-glow bg-white/5 border border-white/10 backdrop-blur p-4">
-                  <h3 className="mb-3 font-semibold">Recent KDA</h3>
-                  <div className="h-56">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <LineChart data={recent}>
-                        <XAxis dataKey="match" />
-                        <YAxis />
-                        <Tooltip />
-                        <Line type="monotone" dataKey="kda" />
-                      </LineChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
-
-                {/* BarChart: GPM trend */}
-                <div className="rounded-card shadow-glow bg-white/5 border border-white/10 backdrop-blur p-4">
-                  <h3 className="mb-3 font-semibold">Recent GPM</h3>
-                  <div className="h-56">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={recent}>
-                        <XAxis dataKey="match" />
-                        <YAxis />
-                        <Tooltip />
-                        <Bar dataKey="gpm" />
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
-
-                {/* Radar: Hero pool & winrate (normalized) */}
-                <div className="md:col-span-2 rounded-card shadow-glow bg-white/5 border border-white/10 backdrop-blur p-4">
-                  <h3 className="mb-3 font-semibold">Hero Pool (Winrate)</h3>
-                  <div className="h-72">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <RadarChart data={heroes.map((h) => ({ metric: h.hero, score: h.winrate }))}>
-                        <PolarGrid />
-                        <PolarAngleAxis dataKey="metric" />
-                        <Radar dataKey="score" />
-                        <Tooltip />
-                      </RadarChart>
-                    </ResponsiveContainer>
-                  </div>
+              <div className="card p-4">
+                <h3 className="mb-3 font-semibold">Recent GPM</h3>
+                <div className="h-56">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={recent}>
+                      <XAxis dataKey="match" />
+                      <YAxis />
+                      <Tooltip />
+                      <Bar dataKey="gpm" />
+                    </BarChart>
+                  </ResponsiveContainer>
                 </div>
               </div>
 
-              <a
-                href={`/teams/${player.teamId}`}
-                className="mt-6 inline-block rounded-md border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10"
-              >
-                {t("details")} {t("teams")} → {team?.name ?? player.teamId.toUpperCase()}
-              </a>
-            </section>
-          </>
+              <div className="md:col-span-2 card p-4">
+                <h3 className="mb-3 font-semibold">Hero Pool (Winrate)</h3>
+                <div className="h-72">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RadarChart data={heroes.map((h) => ({ metric: h.hero, score: h.winrate }))}>
+                      <PolarGrid />
+                      <PolarAngleAxis dataKey="metric" />
+                      <Radar dataKey="score" />
+                      <Tooltip />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </div>
+
+            <a href={`/teams/${player.teamId}`} className="mt-6 inline-block rounded-md border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">
+              {t("details")} {t("teams")} → {team?.name ?? player.teamId.toUpperCase()}
+            </a>
+          </section>
         )}
       </Container>
     </main>

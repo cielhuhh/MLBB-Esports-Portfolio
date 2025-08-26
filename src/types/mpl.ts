@@ -13,8 +13,17 @@ export type TeamStats = {
 };
 
 export type MatchItem = {
-  id: string; dateISO: string; stage: "Regular" | "Playoffs"; teamA: string; teamB: string; bo: 1 | 3 | 5 | 7;
+  id: string;
+  dateISO: string;
+  stage: "Regular" | "Playoffs";
+  teamA: string;
+  teamB: string;
+  bo: 1 | 3 | 5 | 7;
 };
+
+export type PlayerRecent = { match: string; kda: number; gpm: number };
+export type PlayerHero = { hero: string; picks: number; winrate: number };
+export type PlayerStats = { recent?: PlayerRecent[]; heroes?: PlayerHero[] };
 
 export type MplData = {
   season: string;
@@ -23,4 +32,6 @@ export type MplData = {
   players: Player[];
   matches?: MatchItem[];
   teamStats?: Record<TeamId, TeamStats>;
+  /** player stats override by IGN */
+  playerStats?: Record<string, PlayerStats>;
 };
